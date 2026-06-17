@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contrate Evando</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <header>
+        <h1>Bem-vindo ao site do Evando</h1>
+        <nav>
+            <ul>
+                <li><a href="#evando">Sobre o Evando</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <span class="hero-label">Carnes frescas — churrasqueira inclusa</span>
+                <h2>Evando vende carne com churrasqueira inclusa</h2>
+                <p>Com produtos de qualidade e churrasqueira já inclusa no serviço. Atendimento profissional e montagem prática. No período de festa junina, também prepara espetinhos especiais para vender.</p>
+                <div class="hero-actions">
+                    <button class="button-primary" onclick="document.getElementById('evando').scrollIntoView({behavior:'smooth'})">Ver cardápio</button>
+                    <a class="button-secondary hero-link" href="orcamento.html?churrasqueiro=evando&itens=Picanha,Leitão,Alcatra&tipo=simples">Pedir orçamento</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="evando" class="container">
+            <h2>Evando - Especialista em Carnes Nobres</h2>
+            <div class="intro">
+                <p>O Evando prepara churrascos com carnes selecionadas, atendimento rápido e apresentação impecável. Escolha o tipo de churrasco, monte seu cardápio e veja como é fácil contratar o melhor churrasqueiro da região.</p>
+            </div>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <h4>Carnes Premium</h4>
+                    <p>Seleção de peças nobres e cortes suculentos para o seu churrasco caseiro ou festa.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>Churrasqueira inclusa</h4>
+                    <p>Churrasqueira já inclusa no serviço — sem taxa extra de aluguel.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>Espetinho Junino</h4>
+                    <p>Durante festa junina, espetinhos especiais preparados para vender e agradar todos os convidados.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>Atendimento Especial</h4>
+                    <p>Orçamento claro, montagem prática e suporte completo para o seu evento.</p>
+                </div>
+            </div>
+
+            <div class="churrasqueiro-card">
+                <h3>Evando</h3>
+                <p>Selecione o tipo de churrasco:</p>
+                <div class="tipo-churrasco">
+                    <select id="evando-tipo" onchange="atualizarMensagemTipo()">
+                        <option value="simples">Churrasco simples</option>
+                        <option value="completo">Churrasco completo</option>
+                    </select>
+                </div>
+                <div id="tipo-mensagem" class="tipo-mensagem" style="display:none;"></div>
+                <div id="evando-opcoes" style="display: none;">
+                    <p>Selecione os itens do cardápio:</p>
+                    <ul id="evando-cardapio" class="cardapio-lista">
+                        <li><label><input type="checkbox" id="evando-picanha" value="Picanha"> Picanha</label></li>
+                        <li><label><input type="checkbox" id="evando-leitao" value="Leitão"> Leitão</label></li>
+                        <li><label><input type="checkbox" id="evando-alcatra" value="Alcatra"> Alcatra</label></li>
+                        <li><label><input type="checkbox" id="evando-carneiro" value="Carneiro"> Carneiro</label></li>
+                        <li><label><input type="checkbox" id="evando-toscana" value="Toscana"> Toscana</label></li>
+                        <li><label><input type="checkbox" id="evando-frango" value="Frango"> Frango</label></li>
+                    </ul>
+                    <p>Complementos:</p>
+                    <ul class="cardapio-lista">
+                        <li><label><input type="checkbox" id="evando-vina" value="Vinagrete"> Vinagrete</label></li>
+                        <li><label><input type="checkbox" id="evando-farofa" value="Farofa"> Farofa</label></li>
+                        <li><label><input type="checkbox" id="evando-abacaxi" value="Abacaxi"> Abacaxi</label></li>
+                        <li><label><input type="checkbox" id="evando-cebola" value="Cebola"> Cebola</label></li>
+                        <li><label><input type="checkbox" id="evando-queijo" value="Queijo"> Queijo</label></li>
+                        <li><label><input type="checkbox" id="evando-pao-alho" value="Pão com alho"> Pão com alho</label></li>
+                        <li class="evando-extra"><label><input type="checkbox" id="evando-maria-isabel" value="Maria Isabel"> Maria Isabel</label></li>
+                        <li class="evando-extra"><label><input type="checkbox" id="evando-arroz-branco" value="Arroz Branco"> Arroz Branco</label></li>
+                        <li class="evando-extra"><label><input type="checkbox" id="evando-salada" value="Salada"> Salada</label></li>
+                        <li class="evando-extra"><label><input type="checkbox" id="evando-pacoca" value="Paçoca"> Paçoca</label></li>
+                        <li><label><input type="checkbox" id="evando-carbon" value="Carvão"> Carvão</label></li>
+                    </ul>
+                    <div id="evando-selecionados" class="item-selecionado">Nenhum item selecionado</div>
+                </div>
+                <div class="button-group">
+                   <button class="button-primary" onclick="escolherCardapio('evando')">Escolher cardápio completo</button>
+                   <button class="button-secondary" onclick="selecionarItens('evando')">Adicionar itens selecionados</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="index.js" defer></script>
+</body>
+</html>
+

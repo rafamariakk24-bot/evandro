@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orçamento - Evando</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <header>
+        <h1>Orçamento para Evando</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Voltar ao Início</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="container">
+            <div class="page-header">
+                <h2>Seu Pedido Personalizado</h2>
+                <p>Revise o cardápio do Evando e informe o local do evento. A churrasqueira já está inclusa no serviço; envie o endereço ou localização para contato.</p>
+            </div>
+
+            <div id="itens-pedido" class="order-summary"></div>
+
+            <div class="button-group">
+                <button class="button-secondary" onclick="editarCardapio()">Editar cardápio</button>
+            </div>
+
+            <div class="calc-form">
+                <label for="pessoas">Número de pessoas:</label>
+                <input type="number" id="pessoas" name="pessoas" min="1" value="1">
+                <label for="gaconetes">Número de garçons:</label>
+                <input type="number" id="gaconetes" name="gaconetes" min="0" value="0">
+                <label for="espetinhos">Número de espetinhos (opcional):</label>
+                <input type="number" id="espetinhos" name="espetinhos" min="0" value="0">
+                <label for="local">Local do evento (envie endereço ou localização):</label>
+                <input type="text" id="local" name="local" placeholder="Rua, bairro e ponto de referência">
+                <p>Churrasqueira inclusa no serviço. Valor definido pelo Evando no contato.</p>
+            </div>
+
+            <div id="preco" class="preco-card"></div>
+
+            <button id="confirmar" class="button-primary" onclick="contatoWhatsApp()">Confirmar e entrar em contato via WhatsApp</button>
+        </section>
+    </main>
+
+    <script src="orcamento.js" defer></script>
+</body>
+</html>
+
